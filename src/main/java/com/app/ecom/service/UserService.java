@@ -76,7 +76,7 @@ public class UserService {
 
         if(user.getAddress() != null) {
             AddressDTO addressDTO = new AddressDTO();
-//            addressDTO.setStreet(user.getAddress().getStreet());
+            addressDTO.setStreet(user.getAddress().getStreet());
             addressDTO.setCity(user.getAddress().getCity());
             addressDTO.setState(user.getAddress().getState());
             addressDTO.setCountry(user.getAddress().getCountry());
