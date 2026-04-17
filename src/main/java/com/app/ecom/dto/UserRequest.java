@@ -1,7 +1,5 @@
 package com.app.ecom.dto;
-
 import com.app.ecom.model.Address;
-import com.app.ecom.model.UserRole;
 import lombok.Data;
 
 @Data
