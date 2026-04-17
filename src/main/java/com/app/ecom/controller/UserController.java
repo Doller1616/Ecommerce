@@ -1,0 +1,53 @@
+package com.app.ecom.controller;
+
+import com.app.ecom.dto.UserResponse;
+import com.app.ecom.model.User;
+import com.app.ecom.service.UserService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("api/users")
+public class UserController {
+
+    private final UserService userService;
+
+    UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+
+    @GetMapping
+    public ResponseEntity<List<UserResponse>> getAllUsers() {
+        return ResponseEntity.ok(userService.fetchAllUsers());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<UserResponse>> getUsersById(@PathVariable Long id) {
+        Optional<UserResponse> user = userService.fetchUserById(id);
+        if(user.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<String> createUser(@RequestBody User user  ) {
+        userService.addUser(user);
+        return new ResponseEntity<>("User Added Successfully", HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody User user) {
+        boolean updated = userService.updateUser(id, user);
+        if(updated) {
+            return ResponseEntity.ok("User Updated Successfully");
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+}
