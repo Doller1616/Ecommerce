@@ -1,0 +1,12 @@
+package com.ecommerce.user.dto;
+import com.ecommerce.user.model.Address;
+import lombok.Data;
+
+@Data
+public class UserRequest {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private AddressDTO address;
+}
