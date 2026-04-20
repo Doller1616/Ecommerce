@@ -3,6 +3,7 @@ package com.app.ecom.service;
 import com.app.ecom.dto.OrderItemDTO;
 import com.app.ecom.dto.OrderResponse;
 import com.app.ecom.model.*;
+import com.app.ecom.repository.OrderReposirory;
 import com.app.ecom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 @Service

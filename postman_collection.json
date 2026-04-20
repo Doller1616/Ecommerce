@@ -1,0 +1,418 @@
+{
+  "info": {
+    "_postman_id": "40ea10a7-4431-4b5e-8417-00c8b96c13b4",
+    "name": "ECom Monolithic",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38669306"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "GetUserById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAllUsers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateNewUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@gmail.com\",\n    \"phone\": \"9910600408\",\n    // \"role\": 1\n    \"address\": {\n        \"street\": \"Cola Street\",\n        \"city\": \"Ghaziabad\",\n        \"state\": \"UP\",\n        \"country\": \"India\",\n        \"zipcode\": \"201123\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateUserById",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"John Updated\",\n    \"lastName\": \"Doe updated\",\n    \"email\": \"john.doe@gmail.com\",\n    \"phone\": \"9910600408\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"I Phone 15 Pro\",\n    \"description\": \"The iPhone 17 Pro Max (released late 2025) features a 6.9-inch ProMotion OLED display with a heat-forged aluminum unibody design.\",\n    \"price\": 1750000,\n    \"stockQuantity\": \"5\",\n    \"category\": \"Mobile\",\n    \"imageUrl\": \"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MGFQ4?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=VFBPTHlxWW0zOXpqUVU2T1IzQndZMmorYzFkTG5HaE9wejd5WUxYZjRMK2VqbEpIZ1hib0hHcnQwY0VMaEZFTkliQ1FoR3Yyemx4THY5NjA4NS9Rbnc\" ,\n    \"action\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/search?keyword=One p",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "One p"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Products",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"I-Phone 17 Pro Max\",\n    \"description\": \"The iPhone 17 Pro Max (released late 2025) features a 6.9-inch ProMotion OLED display with a heat-forged aluminum unibody design.\",\n    \"price\": 1750000,\n    \"stockQuantity\": \"5\",\n    \"category\": \"Mobile\",\n    \"imageUrl\": \"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MGFQ4?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=VFBPTHlxWW0zOXpqUVU2T1IzQndZMmorYzFkTG5HaE9wejd5WUxYZjRMK2VqbEpIZ1hib0hHcnQwY0VMaEZFTkliQ1FoR3Yyemx4THY5NjA4NS9Rbnc\" ,\n    \"action\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"I-Phone 17 Pro Max\",\n    \"description\": \"The iPhone 17 Pro Max (released late 2025) features a 6.9-inch ProMotion OLED display with a heat-forged aluminum unibody design.\",\n    \"price\": 1750055,\n    \"stockQuantity\": \"5\",\n    \"category\": \"Mobile\",\n    \"imageUrl\": \"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MGFQ4?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=VFBPTHlxWW0zOXpqUVU2T1IzQndZMmorYzFkTG5HaE9wejd5WUxYZjRMK2VqbEpIZ1hib0hHcnQwY0VMaEZFTkliQ1FoR3Yyemx4THY5NjA4NS9Rbnc\" ,\n    \"action\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Add To Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-ID",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"productId\": \"1\",\n\"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cart",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Cart Item",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-User-ID",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n\"productId\": \"1\",\n\"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cart/Items/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cart",
+                "Items",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Cart Items",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-ID",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/cart",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Place Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-ID",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Actuator",
+      "item": [
+        {
+          "name": "Shutdown",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/actuator/shutdown",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "actuator",
+                "shutdown"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

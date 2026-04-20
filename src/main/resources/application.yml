@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: ecom-application
+#  H2 DB Config
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:test
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+  #  Postgres SQL DB Config
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecomdb
+    username: root
+    password: root
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+# Actuator Custom details
+info:
+  app:
+    name: Java Springboot Ecommerce Application
+    description: This is an ecommerce application
+    version: 1.0.0
+
+server:
+  shutdown: graceful
+
+
+
